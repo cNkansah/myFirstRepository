@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1</title>
+    <link rel="stylesheet" href="Cedrick_project1.css">
+</head>
+<body>
+
+    <h1> Major League Baseball(MLB) </h1>
+        <div>
+          
+             
+    <div id="date-selection">
+       
+        <label> Year</label>
+        <select id="Year" onchange="getOption();">
+            <option > Select Year</option>
+            <option value="2020"> 2020</option>
+            <option value="2021"> 2021</option>
+            <option value="2022"> 2022</option>
+        </select>
+        <br> 
+        <label> Month</label>
+        <select id="Month" onchange="getOption();">
+            <option> Select Month</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <br>
+        <label> Day</label>
+        <select id="Day" onchange="getOption();">
+            <option> Select Day</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+   
+        <br>
+        <button id="Retrieve">Retrieve</button>
+     </div>
+
+        <h2> MLB form data </h2>
+    
+     <img src="data:image/png;base64,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" width="20%">
+
+    <div id="baseball-data">
+        <label> Home  team Name</label>
+        <input  type="text" id="homeTeam">
+        <br>
+        <label>Away team Name</label>
+        <input type= "text" id="awayTeam">
+        <br>
+        <label>Winning Pitcher</label>
+        <input type= "text" id="winningPitcher">
+        <br>
+        <label> Losing Pitcher</label>
+        <input type="text"  id="losingPitcher">
+        <br>
+        <label>Venue</label>
+        <input type="text" id="Venue">
+<br>
+        <button id="prevGame">Previous Game</button>
+        <button id="nextGame">Next Game</button>
+        <button id="save">Save changes</button>
+     </div>
+             </div>
+
+
+           
+          
+
+
+           <script>
+                // date selection//
+                var selectedYear= document.getElementById("Year");
+                var selectedMonth= document.getElementById("Month");
+                var selectedDay= document.getElementById("Day");
+
+               
+                    function getOption() {
+                        var year = selectedYear.value;
+                        var month = selectedMonth.value;
+                        var day = selectedDay.value;
+                        // console.log("Year: " + year + " Month: " + month + " Day: " + day);
+                        return year + "-" + month + "-" + day;
+                             }
+               
+
+                             
+
+               // base ball data textboxes//
+                var homeTeamName= document.getElementById("homeTeam");
+                var awayTeamName= document.getElementById("awayTeam");
+                var winPitcher= document.getElementById("winningPitcher");
+                var losePitcher= document.getElementById("losingPitcher");
+                var venue= document.getElementById("Venue");
+
+                //Retrieve button//
+              const retrieveButton= document.getElementById("Retrieve");
+
+              retrieveButton.addEventListener("click", retrieveFile);
+
+               // prevGame,nextGame,save buttons//
+                const previousButton = document.getElementById("prevGame");
+                const nextButton = document.getElementById("nextGame");
+                const saveButton = document.getElementById("save");
+
+                
+                previousButton.disabled=true;
+                nextButton.disabled= true;
+                saveButton.disabled= true;
+
+              
+
+                let currentIndex= 0;
+
+            
+                function retrieveFile(){
+
+                previousButton.disabled= false;
+                nextButton.disabled= false;
+                saveButton.disabled= false;
+
+
+                var xml= new XMLHttpRequest();
+                
+                      var urlDate=getOption();
+                      var dateParts = urlDate.split("-");
+
+                var URL= `https://gd2.mlb.com/components/game/mlb/year_${dateParts[0]}/month_${dateParts[1]}/day_${dateParts[2]}/master_scoreboard.json`;
+
+                    // var URL= 'https://gd2.mlb.com/components/game/mlb/year_2022/month_09/day_04/master_scoreboard.json'
+                    
+                  
+                  xml.open('GET', URL, true);
+
+                  xml.onload= function(){
+                    if(this.status==200){
+                        var baseballObject= JSON.parse(this.responseText);
+
+                        console.log(baseballObject);
+
+                                //concatenated winning/loser pitcher first & last name//
+                        var winPitcherFullname= baseballObject.data.games.game[currentIndex].winning_pitcher.first + " " +  baseballObject.data.games.game[currentIndex].winning_pitcher.last;
+                        var losePitcherFullname=  baseballObject.data.games.game[currentIndex].losing_pitcher.first + " " +  baseballObject.data.games.game[currentIndex].losing_pitcher.last;
+
+                            //Displays baseball data after retrieve button clicked//
+                        homeTeamName.value=  baseballObject.data.games.game[currentIndex].home_team_name;
+                        awayTeamName.value = baseballObject.data.games.game[currentIndex].away_team_name;
+                        winPitcher.value = winPitcherFullname;
+                        losePitcher.value = losePitcherFullname;
+                        venue.value = baseballObject.data.games.game[currentIndex].venue;
+
+                        // update mlb data//
+                        function updateForm() {
+                         var winPitcherFullname= baseballObject.data.games.game[currentIndex].winning_pitcher.first + " " +  baseballObject.data.games.game[currentIndex].winning_pitcher.last;
+                        var losePitcherFullname=  baseballObject.data.games.game[currentIndex].losing_pitcher.first + " " +  baseballObject.data.games.game[currentIndex].losing_pitcher.last;
+
+                    homeTeamName.value = baseballObject.data.games.game[currentIndex].home_team_name;
+                    awayTeamName.value = baseballObject.data.games.game[currentIndex].away_team_name;
+                    winPitcher.value = winPitcherFullname;
+                    losePitcher.value = losePitcherFullname;
+                    venue.value = baseballObject.data.games.game[currentIndex].venue;
+                            }
+
+                  //previous button//
+                        previousButton.addEventListener("click", () => {
+                    if (currentIndex > 0) {
+                    currentIndex--;
+                    updateForm();
+                    console.log( "currentIndex:" + currentIndex);
+                    }
+                    });
+
+                    //next button//
+                    nextButton.addEventListener("click", () => {
+                if (currentIndex < baseballObject.data.games.game.length - 1) {
+                currentIndex++;
+                console.log( "currentIndex:" + currentIndex);
+                updateForm();
+                }
+                    });
+
+                    //save button//
+                    saveButton.addEventListener("click", () => {
+                        alert("Changes saved! check the console");
+                 baseballObject.data.games.game[currentIndex].home_team_name= homeTeamName.value ;
+                 baseballObject.data.games.game[currentIndex].away_team_name = awayTeamName.value;
+
+
+                 // splits the  concatenated  winning/losing pitcher first and last name and assign to respective object property//
+                const winPitcherSeparate= winPitcher.value.split(' ');
+                baseballObject.data.games.game[currentIndex].winning_pitcher.first= winPitcherSeparate[0];
+                baseballObject.data.games.game[currentIndex].winning_pitcher.last= winPitcherSeparate[1];
+
+                const losePitcherSeparate= losePitcher.value.split(' ');
+                baseballObject.data.games.game[currentIndex].losing_pitcher.first= losePitcherSeparate[0];
+                baseballObject.data.games.game[currentIndex].losing_pitcher.last= losePitcherSeparate[1];
+
+                 baseballObject.data.games.game[currentIndex].venue= venue.value;
+
+                        //saved changes to data values showed in console log//
+                console.log("Home team name:" + " " + baseballObject.data.games.game[currentIndex].home_team_name);
+                console.log("Away team Name:" + " " + baseballObject.data.games.game[currentIndex].away_team_name)
+                console.log("winPitcher_firstName:" + " " + baseballObject.data.games.game[currentIndex].winning_pitcher.first);
+                console.log("winPitcher_lastName:" + " "+ baseballObject.data.games.game[currentIndex].winning_pitcher.last);
+                console.log("LosingPitcher_firstName:" + " " + baseballObject.data.games.game[currentIndex].losing_pitcher.first);
+                console.log("LosingPitcher_lastName:" + " " + baseballObject.data.games.game[currentIndex].losing_pitcher.last);
+                console.log("Venue:" + " " + baseballObject.data.games.game[currentIndex].venue);
+                });
+
+                    } //end of if statement
+                  }
+
+                  xml.send();
+                }
+             </script>
+
+</body>
+</html>

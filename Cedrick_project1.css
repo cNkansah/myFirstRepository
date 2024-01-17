@@ -1,0 +1,58 @@
+
+body{
+    margin: 0px;
+    background-color: beige;
+}
+
+
+#date-selection{
+    padding:5px;
+    margin:10px;
+    background-color: rgba(4, 0, 6, 0.384);
+    border: 1px;
+    font-weight: 400;
+}
+
+#Retrieve{
+    margin: 15px;
+    cursor: pointer;
+}
+
+#Retrieve:hover{
+   background-color:blue;
+   color:white;
+}
+
+
+#prevGame,
+#nextGame,
+#save {
+    cursor: pointer;
+}
+
+
+
+#prevGame:hover,
+#nextGame:hover
+{
+    background-color: green;
+    color: white;
+}
+
+#save:hover{
+background-color: red;
+color:white;
+}
+
+#baseball-data{
+    margin:10px;
+    border: 2px;
+    border-color: black;
+}
+
+#homeTeam,
+#awayTeam,
+#losingPitcher,
+#Venue{
+    margin:10px;
+}
